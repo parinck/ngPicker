@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+
+<head>
+    <script src="angular.min.js"></script>
+    <script src="ngPicker.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <style>
+    .selected {
+        border: 2.4px solid black;
+        border-radius: 4px;
+        background: #fafafa;
+    }
+    </style>
+</head>
+
+<body ng-controller="ExampleCtrl">
+    {{src}} ======={{dst}}
+    <ng-picker src="src" dst="dst"></ng-picker>
+    <!-- <ng-picker src="src" dst="dst" max="2"></ng-picker> -->
+    <script>
+    var exampleApp = angular.module('exampleApp', ['ngPicker']);
+    exampleApp.controller('ExampleCtrl', ['$scope',
+        function($scope) {
+            $scope.src = {
+                "name": "parin",
+                "age": 22,
+                "lastname": "kataria",
+                "friend": "bali"
+            }
+            $scope.src = ["parin", "mayur", "baliga"]
+            $scope.dst;
+        }
+    ]);
+    </script>
+</body>
+
+</html>

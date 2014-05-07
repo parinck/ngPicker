@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="panel panel-default row-fluid">
+        <div class="col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <input type="text" ng-model="search_src">
+                </div>
+                <div class="panel-body">
+                    <p class="lead">selection: {{ src_selection }}</p>
+                    <div class="row example multiple" ng-select ng-model="src_selection" select-class="{'selected': $optSelected}" select-multiple>
+                        <div class="span12">
+                            <ul class="list-group">
+                                <li ng-repeat="(key, value) in src | myfilter:search_src" class="list-group-item" ng-select-option="key">
+                                    {{value}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button ng-click="selectAll()" ng-disabled="isDisabled('ALL')" class="btn btn-primary">
+                select all >>
+                <!-- <span class="glyphicon glyphicon-backward"></span> -->
+            </button>
+            <br>
+            <button ng-click="deselectAll()" class="btn btn-primary">
+                << deselect all <!-- <span class="glyphicon glyphicon-backward">
+                    </span>-->
+            </button>
+            <br>
+
+            <button ng-click="moveToDest()" ng-disabled="isDisabled('BTN')" class="btn btn-primary">
+                move to right >
+                <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
+            </button>
+            <br>
+
+            <button ng-click="moveToSrc()" class="btn btn-primary">
+                < move to left <!-- <span class="glyphicon glyphicon-chevron-left">
+                    </span>-->
+            </button>
+        </div>
+        <div class="col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <input type="text" ng-model="search_dst">
+                </div>
+                <div class="panel-body">
+                    <p class="lead">selection: {{ dst_selection }}</p>
+                    <div class="row example multiple" ng-select ng-model="dst_selection" select-class="{'selected': $optSelected}" select-multiple>
+                        <div class="span12">
+                            <ul class="list-group">
+                                <li ng-repeat="(key, value) in dst | myfilter:search_dst" class="list-group-item" ng-select-option="key">
+                                    {{value}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
