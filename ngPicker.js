@@ -378,13 +378,13 @@ ngPicker.service( 'utils', function ( ) {
 
     this.search = function ( needle, haystack ) {
         if ( [ "String", "Number" ].indexOf( this.typeOfVar( needle ) ) !== -1 ) {
-            return this.searchString( needle, haystack );
+            return this.searchString( needle.toString( ), haystack.toString( ) );
         }
         return false;
     };
 
     this.searchString = function ( needle, haystack ) {
-        if ( ( haystack ).toString( ).indexOf( needle ) !== -1 ) {
+        if ( ( haystack ).indexOf( needle ) !== -1 ) {
             return true;
         } else {
             return false;
