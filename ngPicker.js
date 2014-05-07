@@ -378,7 +378,7 @@ ngPicker.service( 'utils', function ( ) {
 
     this.search = function ( needle, haystack ) {
         if ( [ "String", "Number" ].indexOf( this.typeOfVar( needle ) ) !== -1 ) {
-            return this.searchString( needle.toString( ), haystack.toString( ) );
+            return this.searchString( needle.toString( ).toLowerCase( ), haystack.toString( ).toLowerCase( ) );
         }
         return false;
     };
