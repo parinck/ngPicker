@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="panel panel-default ">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="input-group">
+                                <input class="form-control col-mx-8" type="text" ng-model="search_src" placeholder="Filter">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" ng-click="search_src=''" type="button">&times;</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <!-- <p class="lead">selection: {{ src_selection }}</p> -->
+                            <div class="row example multiple" ng-select ng-model="src_selection" select-class="{'selected': $optSelected}" select-multiple>
+                                <div class="span12">
+                                    <ul class="list-group">
+                                        <li ng-repeat="(key, value) in src | myfilter:search_src" class="list-group-item" ng-select-option="key">
+                                            {{value}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center">
+                    <br>
+                    <br>
+
+                    <button title="Select All" ng-click="selectAll()" ng-disabled="isDisabled('ALL')" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-forward"></span>
+                    </button>
+                    <br>
+                    <br>
+                    <button title="Deselect All" ng-click="deselectAll()" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-backward"></span>
+                    </button>
+                    <br>
+                    <br>
+                    <button title="Move to right" ng-click="moveToDest()" ng-disabled="isDisabled('BTN')" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                    <br>
+                    <br>
+                    <button title="Move to left" ng-click="moveToSrc()" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="input-group">
+                                <input class="form-control col-mx-8" type="text" ng-model="search_dst" placeholder="Filter">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" ng-click="search_dst=''" type="button">&times;</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <!-- <p class="lead">selection: {{ dst_selection }}</p> -->
+                            <div class="row example multiple" ng-select ng-model="dst_selection" select-class="{'selected': $optSelected}" select-multiple>
+                                <div class="span12">
+                                    <ul class="list-group">
+                                        <li ng-repeat="(key, value) in dst | myfilter:search_dst" class="list-group-item" ng-select-option="key">
+                                            {{value}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -418,7 +418,6 @@ ngPicker.filter( 'myfilter', function ( utils ) {
                     }
                 }
             }
-            console.log( result );
             return result;
         };
     }
@@ -534,7 +533,7 @@ ngPicker.directive( 'ngPicker', function ( utils ) {
         // require: 'ngSelect', // Array = multiple requires, ? = optional, ^ = check parent elements
         restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
         // template: '',
-        templateUrl: 'bali_dir.html',
+        templateUrl: 'template.html',
         // replace: true,
         // transclude: true,
         // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
