@@ -437,7 +437,8 @@ ngPicker.directive( 'ngPicker', function ( utils ) {
             $scope.src_selection = [ ];
             $scope.dst_selection = [ ];
             $scope.dst = "Array" === utils.typeOfVar( $scope.src ) ? [ ] : {}
-            $scope.max = parseInt( $scope.max );
+            $scope.max = $scope.max || 100000000000000;
+            console.log( "max is ", $scope.max )
 
             $scope.isDisabled = function ( selection ) {
 
